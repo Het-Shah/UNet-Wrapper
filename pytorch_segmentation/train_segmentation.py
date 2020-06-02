@@ -1,5 +1,5 @@
 import json
-
+import os
 system_dict = {}
 
 
@@ -124,10 +124,12 @@ def initialize_train_hyperparameters(
     with open("config.json", "w") as fp:
         json.dump(system_dict, fp)
 
-
+def train():
+    os.system("python train.py --config config.json")
 if __name__ == "__main__":
     initialize_train_dataloader()
     initialize_val_dataloader()
     initialize_model()
     initialize_optimizer_loss()
     initialize_train_hyperparameters()
+    train()
