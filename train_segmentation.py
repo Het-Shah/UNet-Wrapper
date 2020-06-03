@@ -125,7 +125,7 @@ def initialize_train_hyperparameters(
         json.dump(system_dict, fp)
 
 def train():
-    os.system("python train.py --config config.json")
+    os.system("python ./pytorch_segmentation/train.py --config config.json")
 if __name__ == "__main__":
     initialize_train_dataloader()
     initialize_val_dataloader()
